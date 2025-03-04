@@ -1,0 +1,35 @@
+<div class="p-6 space-y-6">
+    <!-- Breadcrumb -->
+    <div class="text-gray-600 text-sm">
+      <h3 class="text-2xl font-semibold text-blue-700">Student Management</h3>
+      <p>Home / <span class="text-blue-600">Student Management</span></p>
+    </div>
+  
+    <!-- Cards Container -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <!-- Admission Management -->
+      <div class="card group" >
+        <i class="pi pi-user-plus text-3xl text-blue-600 group-hover:text-white"></i>
+        <span>Admission Management</span>
+      </div>
+  
+      <!-- Information Management -->
+      <div class="card group">
+        <i class="pi pi-id-card text-3xl text-blue-600 group-hover:text-white"></i>
+        <span>Information Management</span>
+      </div>
+  
+      <!-- Student Registration -->
+      <div class="card group cursor-pointer" (click)="onStudentRegistrationClick()">
+        <i class="pi pi-user-edit text-3xl text-blue-600 group-hover:text-white"></i>
+        <span>Student Registration</span>
+      </div>
+  
+      <!-- Attendance Management -->
+      <div class="card group">
+        <i class="pi pi-calendar-check text-3xl text-blue-600 group-hover:text-white"></i>
+        <span>Attendance Management</span>
+      </div>
+    </div>
+  </div>
+  

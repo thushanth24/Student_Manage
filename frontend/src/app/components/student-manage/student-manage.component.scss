@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.card {
+  @apply flex flex-col items-center justify-center bg-white border border-gray-300 rounded-xl shadow-md 
+  p-6 transition-all duration-300 ease-in-out transform hover:bg-blue-600 hover:text-white hover:shadow-lg;
+}
+
+.card span {
+  @apply mt-3 font-medium text-gray-700 group-hover:text-white;
+}

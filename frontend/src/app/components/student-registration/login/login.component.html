@@ -1,0 +1,36 @@
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
+  <!-- Breadcrumb -->
+  <div class="text-gray-600 text-sm mb-6">
+    <h3 class="text-2xl font-semibold text-blue-700">Student Registration</h3>
+    <p>Home / <span class="text-blue-600 font-medium">Student Registration</span> / <strong>Login</strong></p>
+  </div>
+
+  <!-- Login Card -->
+  <div class="bg-white shadow-lg rounded-xl p-8 w-full max-w-md">
+    <h2 class="text-xl font-semibold text-center text-gray-800">Enter Student’s NIC or Passport No</h2>
+
+    <div class="mt-4">
+      <input 
+        type="text" 
+        placeholder="Enter NIC / Passport No"
+        [(ngModel)]="studentId"
+        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none"
+      />
+    </div>
+
+    <button 
+      class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg mt-4 transition-all"
+      (click)="onLogin()"
+    >
+      Log In
+    </button>
+  </div>
+
+  <!-- Back Button -->
+  <button 
+    class="mt-6 border border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white font-bold py-2 px-4 rounded-lg transition-all"
+    (click)="goBack()"
+  >
+    Back
+  </button>
+</div>

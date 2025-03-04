@@ -1,0 +1,91 @@
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
+    <!-- Breadcrumb -->
+    <div class="text-gray-600 text-sm mb-6 text-center">
+      <h3 class="text-2xl font-semibold text-blue-700">Student Registration</h3>
+      <p>Home / <span class="text-blue-600 font-medium">Student Registration</span></p>
+    </div>
+  
+    <!-- Card Container -->
+    <div class="bg-white shadow-lg rounded-xl p-8 w-full max-w-lg">
+      <!-- Step Indicator -->
+      <p class="text-center text-gray-700 font-medium">Step {{ step + 1 }} of 4</p>
+  
+      <!-- Biographical Details -->
+      <div *ngIf="step === 0">
+        <h4 class="text-lg font-semibold text-gray-800 mb-4">Biographical Details</h4>
+        <label class="form-label">Full Name*</label>
+        <input class="form-input" type="text" [(ngModel)]="formData.fullName" />
+  
+        <label class="form-label">NIC / Passport*</label>
+        <input class="form-input" type="text" [(ngModel)]="formData.nic" />
+  
+        <label class="form-label">Date of Birth*</label>
+        <input class="form-input" type="date" [(ngModel)]="formData.dob" />
+  
+        <label class="form-label">Address*</label>
+        <input class="form-input" type="text" [(ngModel)]="formData.address" />
+      </div>
+  
+      <!-- Academic Details -->
+      <div *ngIf="step === 1">
+        <h4 class="text-lg font-semibold text-gray-800 mb-4">Academic Details</h4>
+        <label class="form-label">Select Courses</label>
+        <input class="form-input" type="text" [(ngModel)]="formData.course" placeholder="Search..." />
+  
+        <label class="form-label">Proficiency in Driving Heavy Vehicle</label>
+        <input class="form-input" type="text" [(ngModel)]="formData.drivingLicense" placeholder="D/L No" />
+      </div>
+  
+      <!-- Employment Details -->
+      <div *ngIf="step === 2">
+        <h4 class="text-lg font-semibold text-gray-800 mb-4">Employment Details</h4>
+        <label class="form-label">Department/Rank</label>
+        <input class="form-input" type="text" [(ngModel)]="formData.department" />
+  
+        <label class="form-label">Sea Services (Years/Months)</label>
+        <input class="form-input" type="text" [(ngModel)]="formData.seaService" />
+  
+        <label class="form-label">Company (if Employed)</label>
+        <input class="form-input" type="text" [(ngModel)]="formData.company" />
+      </div>
+  
+      <!-- Upload Documents -->
+      <div *ngIf="step === 3">
+        <h4 class="text-lg font-semibold text-gray-800 mb-4">Upload Documents</h4>
+        <label class="form-label">NIC*</label>
+        <input type="file" (change)="onFileSelect($event, 'nicFile')" class="file-input" />
+  
+        <label class="form-label">Passport</label>
+        <input type="file" (change)="onFileSelect($event, 'passportFile')" class="file-input" />
+  
+        <label class="form-label">Photo (Passport Size)*</label>
+        <input type="file" (change)="onFileSelect($event, 'photoFile')" class="file-input" />
+      </div>
+  
+      <!-- Navigation Buttons -->
+      <div class="flex justify-between mt-6">
+        <button 
+          class="btn-secondary" 
+          (click)="previousStep()" 
+          *ngIf="step > 0"
+        >
+          Back
+        </button>
+        <button 
+          class="btn-primary" 
+          (click)="nextStep()" 
+          *ngIf="step < 3"
+        >
+          Next
+        </button>
+        <button 
+          class="btn-primary" 
+          (click)="submitForm()" 
+          *ngIf="step === 3"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+  
